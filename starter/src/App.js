@@ -6,10 +6,6 @@ import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchBook from "./components/SearchBook";
 
-
-// TODO add formatter to code
-// TODO previous search results on page when coming from the main page 
-
 function App() {
   const [books, setBooks] = useState([]);
   const [allBooks, setAllBooks] = useState([]);
