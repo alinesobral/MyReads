@@ -38,6 +38,11 @@ const SearchBook = ({shelvedBooks, allBooks, moveShelves, searchAllBooks}) => {
       setShelves();
     });
 
+    // Set search results to empty on the first page load
+    // useEffect(() => {
+    //   setSearchResults([]);
+    // }, []);
+
     return (
         <div className="search-books">
       <div className="search-books-bar">

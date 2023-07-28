@@ -6,10 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchBook from "./components/SearchBook";
 
-//50634
-// README
-// add formatter to code
-// set prop types
+
+// TODO add formatter to code
+// TODO previous search results on page when coming from the main page 
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -45,7 +44,7 @@ function App() {
       console.log("empty query")
       setAllBooks([]);
     }
-  };
+  }
 
   const moveShelves = (book, newShelf) => {
     const move = async () => {
@@ -57,14 +56,13 @@ function App() {
     };
 
     move();
-  };
+  }
 
   useEffect(() => {
     const getBooks = async () => {
       const res = await BooksAPI.getAll();
       setBooks(res);
     };
-
     getBooks();
 
    },[]);
@@ -84,7 +82,7 @@ function App() {
           <Shelf books={books} shelf={"wantToRead"} moveShelves={moveShelves}/>
           <Shelf books={books} shelf={"read"} moveShelves={moveShelves}/>
         </div>
-        <Link to="/search" className="open-search">
+        <Link to="/search" className="open-search" onClick={() => setAllBooks([])}>
           <span>Add a book</span>
         </Link>
       </div>

@@ -18,7 +18,7 @@ const Shelf = ({books, shelf, moveShelves}) => {
             <BookGrid books={booksInShelf} moveShelves={moveShelves}/>
         </div>
     );
-};
+}
 
 Shelf.propTypes = {
     books: PropTypes.array.isRequired,
